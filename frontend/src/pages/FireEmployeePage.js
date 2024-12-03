@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { addDriver } from '../api';
+import { fireEmployee } from '../api'; 
 import '../App.css';
 
-const AddDriverPage = () => {
+const FireEmployeePage = () => {
     const[info, setInfo] = useState({
-        username: '',
-        licenseID: '', license_type: '', driver_experience: ''
+        username: '', user_id: ''
     });
 
     const enterText = (e) => {
@@ -16,28 +15,25 @@ const AddDriverPage = () => {
     const submitProcedure = async (e) => {
         e.preventDefault()
         try {
-            const response = await addDriver(info);
+            const response = await fireEmployee(info);
             alert(response.data.message);
         } catch (error) {
-            alert('Failed to add a new driver');
+            alert('Failed to fire employee!');
         }
     };
 
     const cancelProcedure = () => {
         setInfo({
-            username: '',
-            licenseID: '', license_type: '', driver_experience: ''
+            username: '', user_id: ''
         });
     };
 
     return (
         <div className='procedure-container'>
-            <h1 className='procedure-heading'>Add New Driver Role</h1>
+            <h1 className='procedure-heading'>Fire Employee</h1>
             <form onSubmit={submitProcedure} className='procedure-form'>
                 <input type="text" className='procedure-field' name="username" placeholder="username" value={info.username} onChange={enterText} required />
-                <input type="text" className='procedure-field' name="licenseID" placeholder="licenseID" value={info.licenseID} onChange={enterText} required />
-                <input type="text" className='procedure-field' name="license_type" placeholder="license_type" value={info.license_type} onChange={enterText} required />
-                <input type="number" className='procedure-field' name="driver_experience" placeholder="driver_experience" value={info.driver_experience} onChange={enterText} required />
+                <input type="text" className='procedure-field' name="user_id" placeholder="user_id" value={info.user_id} onChange={enterText} required />
                 <div className='procedure-buttons'>
                     <button className='cancel-button' type='button' onClick={cancelProcedure} >Cancel</button>
                     <button className='submit-button' type='submit'>Submit</button>
@@ -48,4 +44,4 @@ const AddDriverPage = () => {
     );
 };
 
-export default AddDriverPage;
+export default FireEmployeePage;

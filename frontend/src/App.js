@@ -7,6 +7,10 @@ import DisplayDriverViewPage from "./pages/driverViewPage";
 import AddOwnerPage from './pages/AddOwnerPage';
 import AddEmployeePage from './pages/AddEmployeePage';
 import AddDriverPage from './pages/AddDriverPage';
+import StartFundingPage from './pages/StartFundingPage';
+import HireEmployeePage from './pages/HireEmployeePage';
+import FireEmployeePage from './pages/FireEmployeePage';
+import RemoveDriverRolePage from './pages/RemoveDriverRolePage';
 import './App.css';
 
 function App() {
@@ -17,9 +21,16 @@ function App() {
         <Route path="/display-owner-view" element={<DisplayOwnerViewPage />} />
         <Route path="/employees-view" element={<DisplayEmployeeViewPage />} />
         <Route path="/drivers-view" element={<DisplayDriverViewPage />} />
+        
         <Route path="/add-owner" element={<AddOwnerPage />} />
+        <Route path="/start-funding" element={<StartFundingPage />} />
+
         <Route path="/add-employee" element={<AddEmployeePage />} />
+        <Route path="/hire-employee" element={<HireEmployeePage />} />
+        <Route path="/fire-employee" element={<FireEmployeePage />} />
+        
         <Route path="/add-driver-role" element={<AddDriverPage />} />
+        <Route path="/remove-driver-role" element={<RemoveDriverRolePage />} />
       </Routes>
     </Router>
   );

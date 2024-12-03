@@ -11,3 +11,9 @@ export const getDriverView = () => api.get('/drivers/view');
 export const addOwner = (ownerInfo) => api.post('/owners/add', ownerInfo);
 export const addEmployee = (employeeInfo) => api.post('/employees/add', employeeInfo);
 export const addDriver = (driverInfo) => api.post('/drivers/add', driverInfo);
+
+// PUT YOUR CODE HERE
+export const startFunding = (startFundingInfo) => api.post('/start-funding', startFundingInfo);
+export const hireEmployee = (hireEmployeeInfo) => api.post('/hire-employee', hireEmployeeInfo);
+export const fireEmployee = (fireEmployeeInfo) => api.post('/fire-employee', fireEmployeeInfo);
+export const removeDriverRole = (removeDriverRoleInfo) => api.post('/remove-driver-role', removeDriverRoleInfo);

@@ -10,4 +10,19 @@ router.get('/view', (req, res) => {
     });
 });
 
+// add_employee
+router.post('/add', (req, res) => {
+    const { username, first_name, last_name, address, birthdate, taxID, hired, employee_experience, salary } = req.body;
+
+    db.query(`CALL add_employee(?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
+        [username, first_name, last_name, address, birthdate, taxID, hired, employee_experience, salary], 
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to add a new employee'});
+        }
+        res.status(200).json({message: 'A new employee is added successfully'});
+    });
+});
+
 module.exports = router;

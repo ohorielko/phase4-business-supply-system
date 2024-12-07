@@ -17,3 +17,4 @@ export const startFunding = (startFundingInfo) => api.post('/start-funding', sta
 export const hireEmployee = (hireEmployeeInfo) => api.post('/hire-employee', hireEmployeeInfo);
 export const fireEmployee = (fireEmployeeInfo) => api.post('/fire-employee', fireEmployeeInfo);
 export const removeDriverRole = (removeDriverRoleInfo) => api.post('/remove-driver-role', removeDriverRoleInfo);
+export const addWorkerRole = (addWorkerRoleInfo) => api.post('/add-worker-role', addWorkerRoleInfo);

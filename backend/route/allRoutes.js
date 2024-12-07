@@ -62,4 +62,18 @@ router.post('/remove-driver-role', (req, res) => {
     });
 });
 
+// [4] add_worker_role
+router.post('/add-worker-role', (req, res) => {
+    const { username } = req.body;
+
+    db.query(`CALL add_worker_role(?)`, 
+        [username],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(400).json({error: 'Failed to add worker role!'});
+        }
+        res.status(200).json({message: 'Worker role added successfully!'});
+    });
+});
 module.exports = router;

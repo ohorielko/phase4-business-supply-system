@@ -11,6 +11,7 @@ import StartFundingPage from './pages/StartFundingPage';
 import HireEmployeePage from './pages/HireEmployeePage';
 import FireEmployeePage from './pages/FireEmployeePage';
 import RemoveDriverRolePage from './pages/RemoveDriverRolePage';
+import AddWorkerRolePage from './pages/AddWorkerRolePage';
 import './App.css';
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         
         <Route path="/add-driver-role" element={<AddDriverPage />} />
         <Route path="/remove-driver-role" element={<RemoveDriverRolePage />} />
+
+        <Route path="/add-worker-role" element={<AddWorkerRolePage />} />
       </Routes>
     </Router>
   );

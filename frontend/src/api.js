@@ -21,3 +21,4 @@ export const addWorkerRole = (addWorkerRoleInfo) => api.post('/add-worker-role',
 export const addProduct = (addProductInfo) => api.post('/add-product', addProductInfo);
 export const purchaseProduct = (purchaseProductInfo) => api.post('/purchase-product', purchaseProductInfo);
 export const removeProduct = (removeProductInfo) => api.post('/remove-product', removeProductInfo);
+export const addVan = (addVanInfo) => api.post('/add-van', addVanInfo);

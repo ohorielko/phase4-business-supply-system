@@ -121,4 +121,20 @@ router.post('/remove-product', (req, res) => {
         res.status(200).json({message: 'Product removed successfully!'});
     });
 });
+
+// [6] add_van()
+router.post('/add-van', (req, res) => {
+    const { id, tag, fuel, capacity, sales, driven_by } = req.body;
+
+    db.query(`CALL add_van(?, ?, ?, ?, ?, ?)`, 
+        [id, tag, fuel, capacity, sales, driven_by],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to add van!'});
+        }
+        res.status(200).json({message: 'Van added successfully!'});
+    });
+});
+
 module.exports = router;

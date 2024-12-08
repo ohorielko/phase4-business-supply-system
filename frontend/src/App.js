@@ -15,6 +15,7 @@ import AddWorkerRolePage from './pages/AddWorkerRolePage';
 import AddProductPage from './pages/AddProductPage';
 import PurchaseProductPage from './pages/PurchaseProductPage';
 import RemoveProductPage from './pages/RemoveProductPage';
+import AddVanPage from './pages/AddVanPage';
 import './App.css';
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Route path="/add-product" element={<AddProductPage />} />
         <Route path="/purchase-product" element={<PurchaseProductPage />} />
         <Route path="/remove-product" element={<RemoveProductPage />} />
+
+        <Route path="/add-van" element={<AddVanPage />} />
       </Routes>
     </Router>
   );

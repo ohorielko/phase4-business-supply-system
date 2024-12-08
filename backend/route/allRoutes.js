@@ -71,9 +71,54 @@ router.post('/add-worker-role', (req, res) => {
         (err, result) => {
         if (err) {
             console.error(err.message);
-            return res.status(400).json({error: 'Failed to add worker role!'});
+            return res.status(500).json({error: 'Failed to add worker role!'});
         }
         res.status(200).json({message: 'Worker role added successfully!'});
+    });
+});
+
+// [5] add_product()
+router.post('/add-product', (req, res) => {
+    const { barcode, iname, weight } = req.body;
+
+    db.query(`CALL add_product(?, ?, ?)`, 
+        [barcode, iname, weight],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to add product!'});
+        }
+        res.status(200).json({message: 'Product added successfully!'});
+    });
+});
+
+// [18] purchase_product()
+router.post('/purchase-product', (req, res) => {
+    const { long_name, id, tag, barcode, quantity } = req.body;
+
+    db.query(`CALL purchase_product(?, ?, ?, ?, ?)`, 
+        [long_name, id, tag, barcode, quantity],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to purchase product!'});
+        }
+        res.status(200).json({message: 'Product purchased successfully!'});
+    });
+});
+
+// [19] remove_product()
+router.post('/remove-product', (req, res) => {
+    const { barcode } = req.body;
+
+    db.query(`CALL remove_product(?)`, 
+        [barcode],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to remove product!'});
+        }
+        res.status(200).json({message: 'Product removed successfully!'});
     });
 });
 module.exports = router;

@@ -18,3 +18,6 @@ export const hireEmployee = (hireEmployeeInfo) => api.post('/hire-employee', hir
 export const fireEmployee = (fireEmployeeInfo) => api.post('/fire-employee', fireEmployeeInfo);
 export const removeDriverRole = (removeDriverRoleInfo) => api.post('/remove-driver-role', removeDriverRoleInfo);
 export const addWorkerRole = (addWorkerRoleInfo) => api.post('/add-worker-role', addWorkerRoleInfo);
+export const addProduct = (addProductInfo) => api.post('/add-product', addProductInfo);
+export const purchaseProduct = (purchaseProductInfo) => api.post('/purchase-product', purchaseProductInfo);
+export const removeProduct = (removeProductInfo) => api.post('/remove-product', removeProductInfo);

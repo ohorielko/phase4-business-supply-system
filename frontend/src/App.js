@@ -12,6 +12,9 @@ import HireEmployeePage from './pages/HireEmployeePage';
 import FireEmployeePage from './pages/FireEmployeePage';
 import RemoveDriverRolePage from './pages/RemoveDriverRolePage';
 import AddWorkerRolePage from './pages/AddWorkerRolePage';
+import AddProductPage from './pages/AddProductPage';
+import PurchaseProductPage from './pages/PurchaseProductPage';
+import RemoveProductPage from './pages/RemoveProductPage';
 import './App.css';
 
 function App() {
@@ -34,6 +37,10 @@ function App() {
         <Route path="/remove-driver-role" element={<RemoveDriverRolePage />} />
 
         <Route path="/add-worker-role" element={<AddWorkerRolePage />} />
+
+        <Route path="/add-product" element={<AddProductPage />} />
+        <Route path="/purchase-product" element={<PurchaseProductPage />} />
+        <Route path="/remove-product" element={<RemoveProductPage />} />
       </Routes>
     </Router>
   );

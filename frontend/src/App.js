@@ -16,6 +16,10 @@ import AddProductPage from './pages/AddProductPage';
 import PurchaseProductPage from './pages/PurchaseProductPage';
 import RemoveProductPage from './pages/RemoveProductPage';
 import AddVanPage from './pages/AddVanPage';
+import TakeoverVanPage from './pages/TakeoverVanPage';
+import LoadVanPage from './pages/LoadVanPage';
+import DisplayProductViewPage from './pages/DisplayProductView';
+import DisplayServiceViewPage from './pages/DisplayServiceViewPage';
 import './App.css';
 
 function App() {
@@ -26,6 +30,8 @@ function App() {
         <Route path="/display-owner-view" element={<DisplayOwnerViewPage />} />
         <Route path="/employees-view" element={<DisplayEmployeeViewPage />} />
         <Route path="/drivers-view" element={<DisplayDriverViewPage />} />
+        <Route path="/display-product-view" element={<DisplayProductViewPage />} />
+        <Route path="/display-service-view" element={<DisplayServiceViewPage />} />
         
         <Route path="/add-owner" element={<AddOwnerPage />} />
         <Route path="/start-funding" element={<StartFundingPage />} />
@@ -44,6 +50,8 @@ function App() {
         <Route path="/remove-product" element={<RemoveProductPage />} />
 
         <Route path="/add-van" element={<AddVanPage />} />
+        <Route path="/takeover-van" element={<TakeoverVanPage />} />
+        <Route path="/load-van" element={<LoadVanPage />} />
       </Routes>
     </Router>
   );

@@ -2,6 +2,22 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
+// [26] display_product_view
+router.get('/display-product-view', (req, res) => {
+    db.query('SELECT * FROM display_product_view', (err, result) => {
+        if (err) return res.status(400).json({error: err.message});
+        res.status(200).json(result);
+    });
+});
+
+// [27] display_service_view
+router.get('/display-service-view', (req, res) => {
+    db.query('SELECT * FROM display_service_view', (err, result) => {
+        if (err) return res.status(400).json({error: err.message});
+        res.status(200).json(result);
+    });
+});
+
 // [10] start_funding
 router.post('/start-funding', (req, res) => {
     const { owner, amount, long_name, fund_date } = req.body;
@@ -13,7 +29,7 @@ router.post('/start-funding', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed start funding'});
         }
-        res.status(200).json({message: 'Start funding was successfully completed!'});
+        res.status(200).json({message: 'Procedure "start_funding" finished executing!'});
     });
 });
 
@@ -28,7 +44,7 @@ router.post('/hire-employee', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to hire employee'});
         }
-        res.status(200).json({message: 'Employee hired successfully!'});
+        res.status(200).json({message: 'Procedure "hire_employee" finished executing!'});
     });
 });
 
@@ -43,7 +59,7 @@ router.post('/fire-employee', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to fire employee'});
         }
-        res.status(200).json({message: 'Employee fired successfully!'});
+        res.status(200).json({message: 'Procedure "fire_employee" finished executing!'});
     });
 });
 
@@ -58,7 +74,7 @@ router.post('/remove-driver-role', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to remover driver role'});
         }
-        res.status(200).json({message: 'Driver role removed successfully!'});
+        res.status(200).json({message: 'Procedure "remove_driver_role" finished executing!'});
     });
 });
 
@@ -73,7 +89,7 @@ router.post('/add-worker-role', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to add worker role!'});
         }
-        res.status(200).json({message: 'Worker role added successfully!'});
+        res.status(200).json({message: 'Procedure "add_worker_role" finished executing!'});
     });
 });
 
@@ -88,7 +104,7 @@ router.post('/add-product', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to add product!'});
         }
-        res.status(200).json({message: 'Product added successfully!'});
+        res.status(200).json({message: 'Procedure "add_product" finished executing!'});
     });
 });
 
@@ -103,7 +119,7 @@ router.post('/purchase-product', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to purchase product!'});
         }
-        res.status(200).json({message: 'Product purchased successfully!'});
+        res.status(200).json({message: 'Procedure "purchase_product" finished executing!'});
     });
 });
 
@@ -118,7 +134,7 @@ router.post('/remove-product', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to remove product!'});
         }
-        res.status(200).json({message: 'Product removed successfully!'});
+        res.status(200).json({message: 'Procedure "remove_product" finished executing!'});
     });
 });
 
@@ -133,7 +149,37 @@ router.post('/add-van', (req, res) => {
             console.error(err.message);
             return res.status(500).json({error: 'Failed to add van!'});
         }
-        res.status(200).json({message: 'Van added successfully!'});
+        res.status(200).json({message: 'Procedure "add_van" finished executing!'});
+    });
+});
+
+// [14] takeover_van()
+router.post('/takeover-van', (req, res) => {
+    const { username, id, tag } = req.body;
+
+    db.query(`CALL takeover_van(?, ?, ?)`, 
+        [username, id, tag],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to takeover van!'});
+        }
+        res.status(200).json({message: 'Procedure "takeover_van" finished executing!'});
+    });
+});
+
+// [15] load_van()
+router.post('/load-van', (req, res) => {
+    const { id, tag, barcode, more_packages, price } = req.body;
+
+    db.query(`CALL load_van(?, ?, ?, ?, ?)`, 
+        [id, tag, barcode, more_packages, price],
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({error: 'Failed to load van!'});
+        }
+        res.status(200).json({message: 'Procedure "load_van" finished executing!'});
     });
 });
 

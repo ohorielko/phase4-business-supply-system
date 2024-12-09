@@ -7,6 +7,8 @@ const api = axios.create({
 export const getOwnerView = () => api.get('/owners/view');
 export const getEmployeeView = () => api.get('/employees/view');
 export const getDriverView = () => api.get('/drivers/view');
+export const displayProductView = () => api.get('/display-product-view');
+export const displayServiceView = () => api.get('/display-service-view');
 
 export const addOwner = (ownerInfo) => api.post('/owners/add', ownerInfo);
 export const addEmployee = (employeeInfo) => api.post('/employees/add', employeeInfo);
@@ -22,3 +24,6 @@ export const addProduct = (addProductInfo) => api.post('/add-product', addProduc
 export const purchaseProduct = (purchaseProductInfo) => api.post('/purchase-product', purchaseProductInfo);
 export const removeProduct = (removeProductInfo) => api.post('/remove-product', removeProductInfo);
 export const addVan = (addVanInfo) => api.post('/add-van', addVanInfo);
+export const takeoverVan = (takeoverVanInfo) => api.post('/takeover-van', takeoverVanInfo);
+export const loadVan = (loadVanInfo) => api.post('/load-van', loadVanInfo);
+//export const refuelVan = (refuelVanInfo) => api.post('/refuel-van', refuelVanInfo);

@@ -12,9 +12,9 @@ const Home = () => (
                 <Link to="/display-owner-view" className='button'>[22] display_owner_view</Link>
                 <Link to="/employees-view" className='button'>[23] display_employee_view</Link>
                 <Link to="/drivers-view" className='button'>[24] display_driver_view</Link>
-                <Link to="/display_location_view" className='button'>[25] display_location_view</Link>
-                <Link to="/display_product_view" className='button'>[26] display_product_view</Link>
-                <Link to="/display_service_view" className='button'>[27] display_service_view</Link>
+                <Link to="/display-location-view" className='button'>[25] display_location_view</Link>
+                <Link to="/display-product-view" className='button'>[26] display_product_view</Link>
+                <Link to="/display-service-view" className='button'>[27] display_service_view</Link>
             </div>
         </div>
 

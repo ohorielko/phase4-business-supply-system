@@ -1,22 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import DisplayOwnerViewPage from "./pages/ownerViewPage";
 import DisplayEmployeeViewPage from "./pages/employeeViewPage";
 import DisplayDriverViewPage from "./pages/driverViewPage";
-import AddOwnerPage from './pages/AddOwnerPage';
-import AddEmployeePage from './pages/AddEmployeePage';
-import AddDriverPage from './pages/AddDriverPage';
-import StartFundingPage from './pages/StartFundingPage';
-import HireEmployeePage from './pages/HireEmployeePage';
-import FireEmployeePage from './pages/FireEmployeePage';
-import RemoveDriverRolePage from './pages/RemoveDriverRolePage';
-import AddWorkerRolePage from './pages/AddWorkerRolePage';
-import AddProductPage from './pages/AddProductPage';
-import PurchaseProductPage from './pages/PurchaseProductPage';
-import RemoveProductPage from './pages/RemoveProductPage';
-import AddVanPage from './pages/AddVanPage';
-import './App.css';
+import AddOwnerPage from "./pages/AddOwnerPage";
+import AddEmployeePage from "./pages/AddEmployeePage";
+import AddDriverPage from "./pages/AddDriverPage";
+import StartFundingPage from "./pages/StartFundingPage";
+import HireEmployeePage from "./pages/HireEmployeePage";
+import FireEmployeePage from "./pages/FireEmployeePage";
+import RemoveDriverRolePage from "./pages/RemoveDriverRolePage";
+import AddWorkerRolePage from "./pages/AddWorkerRolePage";
+import AddProductPage from "./pages/AddProductPage";
+import PurchaseProductPage from "./pages/PurchaseProductPage";
+import RemoveProductPage from "./pages/RemoveProductPage";
+import AddVanPage from "./pages/AddVanPage";
+import "./App.css";
+import DisplayLocationView from "./components/DisplayLocationView";
+import RefuelVanPage from "./pages/RefuelVanPage";
+import DriveVanPage from "./pages/DriveVanPage";
 
 function App() {
   return (
@@ -26,14 +29,18 @@ function App() {
         <Route path="/display-owner-view" element={<DisplayOwnerViewPage />} />
         <Route path="/employees-view" element={<DisplayEmployeeViewPage />} />
         <Route path="/drivers-view" element={<DisplayDriverViewPage />} />
-        
+        <Route
+          path="/display_location_view"
+          element={<DisplayLocationView />}
+        />
+
         <Route path="/add-owner" element={<AddOwnerPage />} />
         <Route path="/start-funding" element={<StartFundingPage />} />
 
         <Route path="/add-employee" element={<AddEmployeePage />} />
         <Route path="/hire-employee" element={<HireEmployeePage />} />
         <Route path="/fire-employee" element={<FireEmployeePage />} />
-        
+
         <Route path="/add-driver-role" element={<AddDriverPage />} />
         <Route path="/remove-driver-role" element={<RemoveDriverRolePage />} />
 
@@ -44,6 +51,8 @@ function App() {
         <Route path="/remove-product" element={<RemoveProductPage />} />
 
         <Route path="/add-van" element={<AddVanPage />} />
+        <Route path="/refuel-van" element={<RefuelVanPage />} />
+        <Route path="/drive-van" element={<DriveVanPage />} />
       </Routes>
     </Router>
   );

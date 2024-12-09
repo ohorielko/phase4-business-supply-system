@@ -1,12 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+  baseURL: "http://localhost:8000/api",
 });
 
 export const getOwnerView = () => api.get('/owners/view');
 export const getEmployeeView = () => api.get('/employees/view');
 export const getDriverView = () => api.get('/drivers/view');
+export const getLocationView = () => api.get("/locations/view");
 export const displayProductView = () => api.get('/display-product-view');
 export const displayServiceView = () => api.get('/display-service-view');
 
@@ -27,4 +28,8 @@ export const removeProduct = (removeProductInfo) => api.post('/remove-product', 
 export const addVan = (addVanInfo) => api.post('/add-van', addVanInfo);
 export const takeoverVan = (takeoverVanInfo) => api.post('/takeover-van', takeoverVanInfo);
 export const loadVan = (loadVanInfo) => api.post('/load-van', loadVanInfo);
+export const refuelVan = (refuelVanInfo) =>
+  api.post("/refuel-van", refuelVanInfo);
+export const driveVan = (driveVanInfo) => api.post("/drive-van", driveVanInfo);
+
 //export const refuelVan = (refuelVanInfo) => api.post('/refuel-van', refuelVanInfo);

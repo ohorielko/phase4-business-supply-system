@@ -13,6 +13,7 @@ export const displayServiceView = () => api.get('/display-service-view');
 export const addOwner = (ownerInfo) => api.post('/owners/add', ownerInfo);
 export const addEmployee = (employeeInfo) => api.post('/employees/add', employeeInfo);
 export const addDriver = (driverInfo) => api.post('/drivers/add', driverInfo);
+export const addService = (addServiceInfo) => api.post('/add-service', addServiceInfo);
 
 // PUT YOUR CODE HERE
 export const startFunding = (startFundingInfo) => api.post('/start-funding', startFundingInfo);

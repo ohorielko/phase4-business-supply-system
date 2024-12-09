@@ -52,6 +52,7 @@ function App() {
         <Route path="/add-van" element={<AddVanPage />} />
         <Route path="/takeover-van" element={<TakeoverVanPage />} />
         <Route path="/load-van" element={<LoadVanPage />} />
+        <Route path="/add-service" element={<AddServicePage />} />
       </Routes>
     </Router>
   );

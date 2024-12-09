@@ -183,4 +183,19 @@ router.post('/load-van', (req, res) => {
     });
 });
 
+// [8] add_service
+router.post('/add-service', (req, res) => {
+    const { id, long_name, home_base, manager } = req.body;
+
+    db.query(`CALL add_service(?, ?, ?, ?)`, 
+        [id, long_name, home_base, manager], 
+        (err, result) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({ error: 'Failed to add service!' });
+        }
+        res.status(200).json({ message: 'Service added successfully!' });
+    });
+});
+
 module.exports = router;

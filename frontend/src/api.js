@@ -15,6 +15,8 @@ export const addOwner = (ownerInfo) => api.post('/owners/add', ownerInfo);
 export const addEmployee = (employeeInfo) => api.post('/employees/add', employeeInfo);
 export const addDriver = (driverInfo) => api.post('/drivers/add', driverInfo);
 export const addService = (addServiceInfo) => api.post('/add-service', addServiceInfo);
+export const addBusiness = (addBusinessInfo) => api.post('/add-business', addBusinessInfo);
+export const addLocation = (addLocationInfo) => api.post('/add-location', addLocationInfo);
 
 // PUT YOUR CODE HERE
 export const startFunding = (startFundingInfo) => api.post('/start-funding', startFundingInfo);
@@ -31,5 +33,6 @@ export const loadVan = (loadVanInfo) => api.post('/load-van', loadVanInfo);
 export const refuelVan = (refuelVanInfo) =>
   api.post("/refuel-van", refuelVanInfo);
 export const driveVan = (driveVanInfo) => api.post("/drive-van", driveVanInfo);
+export const removeVan = (removeVanInfo) => api.post("/remove-van", removeVanInfo);
 
 //export const refuelVan = (refuelVanInfo) => api.post('/refuel-van', refuelVanInfo);

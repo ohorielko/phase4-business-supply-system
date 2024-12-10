@@ -25,6 +25,9 @@ import DisplayLocationView from "./components/DisplayLocationView";
 import RefuelVanPage from "./pages/RefuelVanPage";
 import DriveVanPage from "./pages/DriveVanPage";
 import AddServicePage from "./pages/AddServicePage";
+import AddBusinessPage from './pages/AddBusinessPage';
+import AddLocationPage from "./pages/AddLocationPage";
+import RemoveVanPage from "./pages/RemoveVanPage";
 
 function App() {
   return (
@@ -69,6 +72,9 @@ function App() {
         <Route path="/takeover-van" element={<TakeoverVanPage />} />
         <Route path="/load-van" element={<LoadVanPage />} />
         <Route path="/add-service" element={<AddServicePage />} />
+        <Route path="/add-business" element={<AddBusinessPage />} />
+        <Route path="/add-location" element={<AddLocationPage />} />
+        <Route path="/remove-van" element={<RemoveVanPage />} />
       </Routes>
     </Router>
   );

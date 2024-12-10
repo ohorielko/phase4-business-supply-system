@@ -227,9 +227,57 @@ router.post("/add-service", (req, res) => {
         console.error(err.message);
         return res.status(500).json({ error: "Failed to add service!" });
       }
-      res.status(200).json({ message: "Service added successfully!" });
+      res.status(200).json({ message: "Procedure 'add_service' finished executing!" });
     }
   );
+});
+
+// [7] add_business()
+router.post("/add-business", (req, res) => {
+  const { long_name, rating, spent, location } = req.body;
+
+  db.query(
+    `CALL add_business(?, ?, ?, ?)`,
+    [long_name, rating, spent, location],
+    (err, result) => {
+      if (err) {
+        console.error("Error adding business:", err.message);
+        return res.status(500).json({ error: "Failed to add business!" });
+      }
+      res.status(200).json({ message: "Procedure 'add_business' finished executing!" });
+    }
+  );
+});
+
+// [7] add_location()
+router.post("/add-location", (req, res) => {
+  const { label, x_coord, y_coord, space } = req.body;
+
+  db.query(
+    `CALL add_location(?, ?, ?, ?)`,
+    [label, x_coord, y_coord, space],
+    (err, result) => {
+      if (err) {
+        console.error("Error adding location:", err.message);
+        return res.status(500).json({ error: "Failed to add location!" });
+      }
+      res.status(200).json({ message: "Procedure 'add_location' finished executing!" });
+    }
+  );
+});
+
+// [20] remove_van()
+router.post("/remove-van", (req, res) => {
+  const { id, tag } = req.body;
+
+  db.query(`CALL remove_van(?, ?)`, [id, tag],
+  (err, result) => {
+    if (err) {
+      console.error("Error removing van:", err.message);
+      return res.status(500).json({ error: "Failed to remove van!" });
+    }
+    res.status(200).json({ message: "Van removed successfully!" });
+  });
 });
 
 module.exports = router;

@@ -20,6 +20,7 @@ import TakeoverVanPage from "./pages/TakeoverVanPage";
 import LoadVanPage from "./pages/LoadVanPage";
 import DisplayProductViewPage from "./pages/DisplayProductView";
 import DisplayServiceViewPage from "./pages/DisplayServiceViewPage";
+import ManageServicePage from "./pages/ManageServicePage";
 import "./App.css";
 import DisplayLocationView from "./components/DisplayLocationView";
 import RefuelVanPage from "./pages/RefuelVanPage";
@@ -69,6 +70,7 @@ function App() {
         <Route path="/takeover-van" element={<TakeoverVanPage />} />
         <Route path="/load-van" element={<LoadVanPage />} />
         <Route path="/add-service" element={<AddServicePage />} />
+        <Route path="/manage-service" element={<ManageServicePage />} />
       </Routes>
     </Router>
   );

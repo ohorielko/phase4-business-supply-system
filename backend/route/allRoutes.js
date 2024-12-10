@@ -232,6 +232,19 @@ router.post("/add-service", (req, res) => {
   );
 });
 
+// [13] manage_service
+router.post("/manage-service", (req, res) => {
+  const { username, id } = req.body;
+
+  db.query(`CALL manage_service(?, ?)`, [username, id], (err, result) => {
+    if (err) {
+      console.error(err.message);
+      return res.status(500).json({ error: "Failed to manage service!" });
+    }
+    res.status(200).json({ message: "Service manager updated successfully!" });
+  });
+});
+
 // [7] add_business()
 router.post("/add-business", (req, res) => {
   const { long_name, rating, spent, location } = req.body;

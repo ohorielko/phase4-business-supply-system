@@ -33,6 +33,9 @@ export const loadVan = (loadVanInfo) => api.post('/load-van', loadVanInfo);
 export const refuelVan = (refuelVanInfo) =>
   api.post("/refuel-van", refuelVanInfo);
 export const driveVan = (driveVanInfo) => api.post("/drive-van", driveVanInfo);
+export const manageService = (manageServiceInfo) => api.post('/manage-service', manageServiceInfo);
+
 export const removeVan = (removeVanInfo) => api.post("/remove-van", removeVanInfo);
+
 
 //export const refuelVan = (refuelVanInfo) => api.post('/refuel-van', refuelVanInfo);
